@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = ["crates/runner", "crates/shader", "crates/shared"]
+default-members = ["crates/runner"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+
+# [workspace.dependencies]
+# spirv-std = "0.9.0"
+[workspace.dependencies.spirv-std]
+git = "https://github.com/EmbarkStudios/rust-gpu"
+rev = "54f6978c25b7e168ded04e720b996625b3654ebd"

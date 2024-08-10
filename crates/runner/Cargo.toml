@@ -1,0 +1,21 @@
+[package]
+name = "runner"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# spirv-builder = "0.9.0"
+# daggy = "0.8.0"
+wgpu = { version = "0.19.1", features = ["spirv", "vulkan-portability"] }
+bytemuck = "1.15.0"
+winit = "0.29.0"
+futures = { version = "0.3", default-features = false, features = [
+  "std",
+  "executor",
+] }
+shared = { path = "../shared" }
+
+[dependencies.spirv-builder]
+git = "https://github.com/EmbarkStudios/rust-gpu"
+rev = "54f6978c25b7e168ded04e720b996625b3654ebd"
+features = ["watch"]
